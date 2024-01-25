@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7nyjvioq1mhp"]
+
+[ext_resource type="Script" path="res://color_picker/colorpicker_bars.gd" id="1_se4vd"]
+[ext_resource type="Script" path="res://color_picker/colorpicker_circle.gd" id="2_61adc"]
+
+[node name="Color Picker" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 600.0
+offset_bottom = 272.0
+
+[node name="ColorPicker Circle" type="ColorPicker" parent="HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+edit_alpha = false
+color_mode = 1
+deferred_mode = true
+picker_shape = 1
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
+script = ExtResource("2_61adc")
+
+[node name="ColorPicker Bars" type="ColorPicker" parent="HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin = 10
+alignment = 1
+color = Color(1, 0, 0, 1)
+edit_alpha = false
+color_mode = 1
+picker_shape = 4
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+presets_visible = false
+script = ExtResource("1_se4vd")
+
+[connection signal="mouse_entered" from="HBoxContainer/ColorPicker Circle" to="HBoxContainer/ColorPicker Circle" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="HBoxContainer/ColorPicker Bars" to="HBoxContainer/ColorPicker Bars" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/ColorPicker Bars" to="HBoxContainer/ColorPicker Bars" method="_on_mouse_exited"]

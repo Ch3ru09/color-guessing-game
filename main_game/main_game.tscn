@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ssm40piktui1"]
+
+[ext_resource type="PackedScene" uid="uid://b7nyjvioq1mhp" path="res://color_picker/color_picker.tscn" id="1_fcnux"]
+
+[node name="Main Game" type="Node2D"]
+
+[node name="Color Picker" parent="." instance=ExtResource("1_fcnux")]
