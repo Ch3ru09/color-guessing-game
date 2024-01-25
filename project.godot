@@ -11,7 +11,9 @@ config_version=5
 [application]
 
 config/name="ColorPicker"
+run/main_scene="res://welcome_menu/welcome_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.png"
 
 [dotnet]
 

@@ -1,18 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7nyjvioq1mhp"]
+[gd_scene load_steps=5 format=3 uid="uid://b7nyjvioq1mhp"]
 
 [ext_resource type="Script" path="res://color_picker/colorpicker_bars.gd" id="1_se4vd"]
 [ext_resource type="Script" path="res://color_picker/colorpicker_circle.gd" id="2_61adc"]
+
+[sub_resource type="Gradient" id="Gradient_g3424"]
+colors = PackedColorArray(0.408619, 0.182859, 1.44392e-07, 1, 0.490422, 0.345207, 0.196861, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wvx2x"]
+gradient = SubResource("Gradient_g3424")
 
 [node name="Color Picker" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-offset_right = 600.0
-offset_bottom = 272.0
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 848.0
+offset_bottom = 304.0
+texture = SubResource("GradientTexture1D_wvx2x")
 
-[node name="ColorPicker Circle" type="ColorPicker" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -136.0
+offset_right = 300.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ColorPicker Circle" type="ColorPicker" parent="TextureRect/HBoxContainer"]
 layout_direction = 2
 layout_mode = 2
 color = Color(1, 0, 0, 1)
@@ -28,7 +50,7 @@ hex_visible = false
 presets_visible = false
 script = ExtResource("2_61adc")
 
-[node name="ColorPicker Bars" type="ColorPicker" parent="HBoxContainer"]
+[node name="ColorPicker Bars" type="ColorPicker" parent="TextureRect/HBoxContainer"]
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -41,9 +63,9 @@ picker_shape = 4
 can_add_swatches = false
 sampler_visible = false
 color_modes_visible = false
+hex_visible = false
 presets_visible = false
 script = ExtResource("1_se4vd")
 
-[connection signal="mouse_entered" from="HBoxContainer/ColorPicker Circle" to="HBoxContainer/ColorPicker Circle" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="HBoxContainer/ColorPicker Bars" to="HBoxContainer/ColorPicker Bars" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="HBoxContainer/ColorPicker Bars" to="HBoxContainer/ColorPicker Bars" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/HBoxContainer/ColorPicker Circle" to="TextureRect/HBoxContainer/ColorPicker Circle" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="TextureRect/HBoxContainer/ColorPicker Bars" to="TextureRect/HBoxContainer/ColorPicker Bars" method="_on_mouse_entered"]
