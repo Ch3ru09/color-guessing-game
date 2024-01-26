@@ -1,7 +1,7 @@
 extends ColorPicker
 
 var entered = false
-@onready var colorpicker_circle = get_parent().get_node("ColorPicker Circle") as ColorPicker
+@onready var colorpicker_circle = get_parent().get_parent().get_node("ColorPicker Circle") as ColorPicker
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

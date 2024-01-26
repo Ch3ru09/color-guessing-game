@@ -23,10 +23,10 @@ texture = SubResource("GradientTexture2D_w7y46")
 
 [node name="ColorRect" parent="NinePatchRect" instance=ExtResource("3_aymlu")]
 layout_mode = 1
-offset_left = 77.0
-offset_top = -5.0
-offset_right = -76.0
-offset_bottom = -247.0
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 765.0
+offset_bottom = 571.0
 
 [node name="Color Picker" parent="NinePatchRect" instance=ExtResource("1_fcnux")]
 layout_mode = 1
@@ -35,9 +35,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -318.0
+offset_left = -317.5
 offset_top = -251.0
-offset_right = 530.0
+offset_right = 533.5
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 0

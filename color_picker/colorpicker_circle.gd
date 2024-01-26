@@ -1,7 +1,7 @@
 extends ColorPicker
 
 var entered = false
-@onready var colorpicker_bar = get_parent().get_node("ColorPicker Bars") as ColorPicker
+@onready var colorpicker_bar = get_parent().get_node("VBoxContainer/ColorPicker Bars") as ColorPicker
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
